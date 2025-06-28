@@ -1,5 +1,6 @@
 # To-Do List Application
 
+# Shows the main menu to the user
 def display_menu():
     """Display the main menu options."""
     print("\n=== TO-DO LIST APPLICATION ===")
@@ -8,6 +9,7 @@ def display_menu():
     print("3. Delete Task")
     print("4. Quit")
 
+# Adds a new task to the task list
 def add_task(tasks):
     """Add a new task to the list."""
     task = input("Enter the task you want to add: ").strip()
@@ -17,6 +19,7 @@ def add_task(tasks):
     else:
         print("Task cannot be empty.")
 
+# Shows all current tasks to the user
 def view_tasks(tasks):
     """Display all tasks in the list."""
     if not tasks:
@@ -26,6 +29,8 @@ def view_tasks(tasks):
         for idx, task in enumerate(tasks, start=1):
             print(f"{idx}. {task}")
 
+
+# Deletes a task based on the number the user enters
 def delete_task(tasks):
     """Delete a task by its number in the list."""
     if not tasks:
@@ -44,6 +49,7 @@ def delete_task(tasks):
     except ValueError:
         print("Please enter a valid number.")
 
+# Runs the main loop of the app and handles user input
 def main():
     """Main function to run the To-Do List application."""
     tasks = []
@@ -67,6 +73,6 @@ def main():
         finally:
             print("\nReturning to main menu...")
 
-# Run the application
+# Starts the application when the script is run
 if __name__ == "__main__":
     main()
